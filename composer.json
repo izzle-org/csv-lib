@@ -1,9 +1,12 @@
 {
     "name": "izzle/csv",
-    "description": "The CSV Labrary.",
+    "description": "The CSV Library",
     "keywords": ["library", "csv"],
-    "license": "MIT",
+    "license": "LGPL",
     "type": "project",
+    "require" : {
+        "php": ">=7.0"
+    },
     "autoload": {
         "psr-4": {
             "Izzle\\Csv\\": "src/"
