@@ -1,0 +1,12 @@
+{
+    "name": "izzle/csv",
+    "description": "The CSV Labrary.",
+    "keywords": ["library", "csv"],
+    "license": "MIT",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Izzle\\Csv\\": "src/"
+        }
+    }
+}
