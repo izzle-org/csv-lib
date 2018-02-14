@@ -17,6 +17,8 @@ class Reader implements ReaderInterface
     public function __construct(Config $config)
     {
         $this->config = $config;
+    
+        ConvertMbstringEncoding::register();
     }
     
     /**
