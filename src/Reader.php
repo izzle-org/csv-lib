@@ -27,8 +27,12 @@ class Reader implements ReaderInterface
     public function parse(string $filename, InterpreterInterface $interpreter): bool
     {
         ini_set('auto_detect_line_endings', true); // For mac's office excel csv
+
+		$url = ($this->config->getFromCharset() === null) ?
+            $filename :
+            ConvertMbstringEncoding::getFilterURL($filename, $this->config->getFromCharset(), $this->config->getToCharset());
     
-        $csv = new SplFileObject($filename);
+        $csv = new SplFileObject($url);
         $csv->setCsvControl($this->config->getDelimiter(), $this->config->getEnclosure(), $this->config->getEscape());
         $csv->setFlags($this->config->getFlags());
         
